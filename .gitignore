@@ -1,6 +1,7 @@
 webroot/third-party/*
 /Vendor/*
 /Plugin/*
+composer.lock
 
 # Cake TMP Dirs
 /tmp/*
