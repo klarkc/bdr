@@ -83,7 +83,7 @@ CakePlugin::load('Bs3Helpers');
 //CakePlugin::load('Tools', array('bootstrap' => true));
 
 CakePlugin::load('CodeSniffer');
-Configure::write('CodeSniffer.standard', 'MyCakePHP');
+Configure::write('CodeSniffer.standard', 'PSR2');
 
 /**
  * You can attach event listeners to the request lifecycle as Dispatcher Filter. By default CakePHP bundles two filters:
