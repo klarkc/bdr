@@ -20,7 +20,7 @@ class SessionExtHelper extends SessionHelper
   	 *
   	 * @param string $key The [Message.]key you are rendering in the view.
   	 * @param array  $attrs Additional attributes to use for the creation of
-	 * this flash message. Supports the 'params', and 'element' keys that are used in the helper.
+  	 * this flash message. Supports the 'params', and 'element' keys that are used in the helper.
   	 * @return string string
   	 */
     public function flash($key = 'flash', $attrs = array())
