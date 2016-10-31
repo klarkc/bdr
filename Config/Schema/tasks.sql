@@ -10,8 +10,8 @@ USE `bdr` ;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `bdr`.`tasks` (
   `id` INT NOT NULL,
-  `title` VARCHAR(45) NULL,
-  `description` VARCHAR(45) NULL,
+  `title` VARCHAR(45) NOT NULL,
+  `description` VARCHAR(250) NULL,
   `priority` int NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
