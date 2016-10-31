@@ -7,10 +7,10 @@ echo $this->fetch('meta');
 echo $this->Html->css('debugging.css');
 
 // Bootstrap Core CSS
-echo $this->Html->css('/third-party/components-bootstrap-default/bootstrap.css');
+echo $this->Html->css('/third-party/components-bootstrap-default/css/bootstrap.min.css');
 
 // Fontes Customizadas
-echo $this->Html->css('/third-party/components-font-awesome/font-awesome.css');
+echo $this->Html->css('/third-party/components-font-awesome/css/font-awesome.min.css');
 
 // Main CSS
 echo $this->Html->css('main.css');
@@ -18,15 +18,10 @@ echo $this->Html->css('main.css');
 echo $this->fetch('css');
 
 // Jquery
-echo $this->Html->script('/third-party/jquery/jquery.js');
-
-// Template JS
+echo $this->Html->script('/third-party/jquery/dist/jquery.min.js');
 
 // Bootstrap Core JavaScript
-echo $this->Html->script('/third-party/bootstrap/bootstrap.js');
-
-// Pre loading script
-echo $this->Html->script('custom_preload');
+echo $this->Html->script('/third-party/components-bootstrap/js/bootstrap.min.js');
 
 // Main JavaScript
 echo $this->Html->script('main.js');
