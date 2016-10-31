@@ -34,6 +34,8 @@ class Task extends AppModel {
 		),
         'priority' => array(
             'rule' => 'numeric',
+            'allowEmpty' => false,
+            'required' => false,
             'message' => 'Invalid priority value'
         )
 	);
