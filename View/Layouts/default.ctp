@@ -37,11 +37,9 @@
 
 <body>
     <div class="<?php echo h(str_replace(' ','_', strtolower($title_for_layout))); ?>">
-        <app-toolbar>
-            <div main-title><?php echo $title_for_layout; ?></div>
-        </app-toolbar>
-        <paper-input></paper-input>
         <?php
+        echo $this->element('drawer');
+
         if (Configure::read('show_debug')) {
             echo $this->element('debug');
         }

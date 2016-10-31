@@ -44,6 +44,25 @@
     */
     --text-primary-color: var(--dark-theme-text-color);
     --default-primary-color: var(--primary-color);
+
+    font-family: 'Roboto', Helvica, sans-serif;
 }
 
+app-toolbar {
+    background-color: var(--primary-color);
+    color: var(--dark-theme-text-color);
+    --app-toolbar-font-size: 24px;
+}
+
+app-drawer {
+    --app-drawer-content-container: {
+        background-color: var(--light-primary-color);
+        color: var(--light-theme-text-color);
+    }
+}
+
+paper-menu#menu {
+    --paper-menu-background-color: var(--light-primary-color);
+    color: var(--light-theme-text-color);
+}
 </style>
