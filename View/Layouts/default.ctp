@@ -36,17 +36,22 @@
 </head>
 
 <body>
-    <div class="<?php echo h(str_replace(' ','_', strtolower($title_for_layout))); ?>">
-        <?php
-        echo $this->element('drawer');
+    <app-drawer-layout class="<?php echo h(str_replace(' ','_', strtolower($title_for_layout))); ?>">
+        <?php echo $this->element('drawer'); ?>
+        <app-header-layout>
+            <app-header>
+                <?php echo $this->element('toolbar'); ?>
+            </app-header>
 
-        if (Configure::read('show_debug')) {
-            echo $this->element('debug');
-        }
-        echo $this->Session->flash();
-        echo $this->fetch('content');
-        ?>
-    </div>
+            <?php
+            if (Configure::read('show_debug')) {
+                echo $this->element('debug');
+            }
+            echo $this->Session->flash();
+            echo $this->fetch('content');
+            ?>
+        </app-header-layout>
+    </app-drawer-layout>
 </body>
 
 </html>

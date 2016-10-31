@@ -1,12 +1,8 @@
-<app-drawer-layout>
-    <app-drawer opened>
-        <paper-menu selected="4" id="menu">
-            <paper-item>Questão 1</paper-item>
-            <paper-item>Questão 2</paper-item>
-            <paper-item>Questão 3</paper-item>
-            <paper-item>Tarefas (Questão 4)</paper-item>
-        </paper-menu>
-    </app-drawer>
-
-    <?php echo $this->element('toolbar'); ?>
-</app-drawer-layout>
+<app-drawer opened>
+    <paper-menu attr-for-selected="page" id="menu">
+        <paper-item page="questao1">Questão 1</paper-item>
+        <paper-item page="questao2">Questão 2</paper-item>
+        <paper-item page="questao3">Questão 3</paper-item>
+        <paper-item page="index">Tarefas (Questão 4)</paper-item>
+    </paper-menu>
+</app-drawer>
