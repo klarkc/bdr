@@ -215,12 +215,7 @@ Configure::write('Cache.disable', false);
  *
  */
 Configure::write('Session', array(
-	'defaults' => 'database',
-	'handler' => array(
-		'engine' => 'ComboSession',
-		'model' => 'Sessao',
-		'cache' => 'default'
-	)
+	'defaults' => 'database'
 ));
 
 /**
