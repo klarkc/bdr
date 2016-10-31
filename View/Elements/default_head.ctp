@@ -11,11 +11,9 @@ echo $this->Html->css('main.css');
 
 echo $this->fetch('css');
 
-// Jquery
-echo $this->Html->script('/third-party/jquery/dist/jquery.min.js');
-
-// Bootstrap Core JavaScript
-echo $this->Html->script('/third-party/components-bootstrap/js/bootstrap.min.js');
+// Polymer dependencies
+echo $this->Html->script('/third-party/webcomponentsjs/webcomponents-lite.min.js');
+echo $this->element('imports');
 
 // Main JavaScript
 echo $this->Html->script('main.js');
