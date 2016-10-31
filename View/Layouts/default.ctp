@@ -36,24 +36,16 @@
 </head>
 
 <body>
-	<div id="wrapper">
-		<div class="no-margin" id="page-wrapper">
-			<div class="<?php echo h(str_replace(' ','_', strtolower($title_for_layout))); ?> index">
-				<div class="row">
-					<div class="col-lg-12">
-						<h1 class="page-header"><?php echo $title_for_layout; ?></h1>
-					</div>
-				</div>
-				<?php
-				if (Configure::read('show_debug')) {
-					echo $this->element('debug');
-				}
-				?>
-				<?php echo $this->Session->flash(); ?>
-				<?php echo $this->fetch('content'); ?>
-			</div>
-		</div>
-	</div>
+    <div class="<?php echo h(str_replace(' ','_', strtolower($title_for_layout))); ?>">
+        <?php
+        echo $this->element('navbar');
+        if (Configure::read('show_debug')) {
+            echo $this->element('debug');
+        }
+        echo $this->Session->flash();
+        echo $this->fetch('content');
+        ?>
+    </div>
 </body>
 
 </html>
