@@ -22,20 +22,20 @@ class Task extends AppModel {
 	 */
 	public $validate = array(
 		'title' => array(
-			'notBlank' => array(
-				'rule' => array('notBlank'),
-				'required' => true,
-                'message' => 'Title cannot be empty'
-			),
+            'rule' => 'notBlank',
+            'required' => true,
+            'message' => 'Title cannot be empty'
 		),
 		'description' => array(
-			'notBlank' => array(
-				'rule' => array('maxLength', '250'),
-                'allowEmpty' => true,
-				'required' => false,
-				'message' => 'Description is too long',
-			)
-		)
+            'rule' => array('maxLength', '250'),
+            'allowEmpty' => true,
+            'required' => false,
+            'message' => 'Description is too long'
+		),
+        'priority' => array(
+            'rule' => 'numeric',
+            'message' => 'Invalid priority value'
+        )
 	);
 
 }
