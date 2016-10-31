@@ -6,12 +6,6 @@ echo $this->fetch('meta');
 // Debugging CSS
 echo $this->Html->css('debugging.css');
 
-// Bootstrap Core CSS
-echo $this->Html->css('/third-party/components-bootstrap-default/css/bootstrap.min.css');
-
-// Fontes Customizadas
-echo $this->Html->css('/third-party/components-font-awesome/css/font-awesome.min.css');
-
 // Main CSS
 echo $this->Html->css('main.css');
 
