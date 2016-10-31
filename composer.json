@@ -7,7 +7,6 @@
         "codaxis/cakephp-bootstrap3-helpers": "dev-translation-issues",
         "composer/installers": "*",
         "ext-mcrypt": "*",
-        "ext-memcached": "*",
         "jrbasso/cake_ptbr": "^2.0.0",
         "php": ">=5.3.0"
     },
