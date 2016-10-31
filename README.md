@@ -24,3 +24,14 @@ composer install
 ```bash
 php -S localhost:8000
 ```
+
+## API
+
+| HTTP format |	URL format | Controller action invoked |
+|-------------|------------|---------------------------|
+| GET | /tasks.json | TasksController::index() |
+| GET | /tasks/123.json | TasksController::view(123) |
+| POST | /tasks.json | TasksController::add() |
+| POST | /tasks/123.json | TasksController::edit(123) |
+| PUT | /tasks/123.json | TasksController::edit(123) |
+| DELETE | /tasks/123.json | TasksController::delete(123) |
