@@ -27,7 +27,7 @@ composer install
 ## Servidor de desenvolvimento
 
 ```bash
-php -S localhost:8000
+./Console/cake server -p 8000
 ```
 
 ## API
