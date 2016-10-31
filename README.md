@@ -19,6 +19,11 @@ composer install
 ./Console/cake test app
 ```
 
+## Criar tabelas no BD
+```bash
+./Console/cake schema create
+```
+
 ## Servidor de desenvolvimento
 
 ```bash
