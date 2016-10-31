@@ -1,0 +1,44 @@
+{
+  "name": "bdr",
+  "version": "0.0.1",
+  "description": "Prova tecnica BDR",
+  "authors": [
+    "Walker Gusmão"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/klarkc/bdr",
+  "moduleType": [
+    "node"
+  ],
+  "private": true,
+  "componentsDirectory": "webroot/third-party",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "components-bootstrap-default": "~3.3.5",
+    "components-font-awesome": "^4.6.3"
+  },
+  "overrides": {
+    "components-bootstrap-default": {
+      "main": [
+        "css/bootstrap.css",
+        "css/bootstrap-theme.css",
+        "fonts/glyphicons-halflings-regular.eot",
+        "fonts/glyphicons-halflings-regular.svg",
+        "fonts/glyphicons-halflings-regular.ttf",
+        "fonts/glyphicons-halflings-regular.woff",
+        "fonts/glyphicons-halflings-regular.woff2",
+        "fonts/glyphicons-halflings-regular.woff2"
+      ]
+    }
+  },
+  "devDependencies": {},
+  "resolutions": {
+    "font-awesome": "~4.6.3"
+  }
+}
