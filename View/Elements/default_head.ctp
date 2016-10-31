@@ -9,6 +9,9 @@ echo $this->Html->css('debugging.css');
 // Main CSS
 echo $this->Html->css('main.css');
 
+// Polymer CSS
+echo $this->element('polymer_css');
+
 echo $this->fetch('css');
 
 // Polymer dependencies
