@@ -161,9 +161,6 @@ Configure::write('Bs3.Form.styles', array(
     )
 ));
 
-// Stopwrods para Plugin Searchable
-include APP . 'Config' . DS . 'stopwords.php';
-
 /* Funções globais */
 
 /**
