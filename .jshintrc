@@ -1,0 +1,9 @@
+{
+    "indent": 4,
+    "jquery": true,
+    "globals": {
+        "numeral": true,
+        "moment": true,
+        "cake": true
+    }
+}
