@@ -103,8 +103,8 @@ Configure::write('CodeSniffer.standard', 'PSR2');
  * ));
  */
 Configure::write('Dispatcher.filters', array(
-	'AssetDispatcher',
-	'CacheDispatcher'
+    'AssetDispatcher',
+    'CacheDispatcher'
 ));
 
 /**
@@ -113,12 +113,12 @@ Configure::write('Dispatcher.filters', array(
 App::uses('CakeLog', 'Log');
 
 CakeLog::config('debug', array(
-	'engine' => 'Syslog',
-	'types' => array('notice', 'info', 'debug')
+    'engine' => 'Syslog',
+    'types' => array('notice', 'info', 'debug')
 ));
 CakeLog::config('error', array(
-	'engine' => 'Syslog',
-	'types' => array('warning', 'error', 'critical', 'alert', 'emergency')
+    'engine' => 'Syslog',
+    'types' => array('warning', 'error', 'critical', 'alert', 'emergency')
 ));
 
 /**
@@ -137,28 +137,28 @@ Configure::write('Config.language', 'pt_br');
 
 // Configuração do Bs3Helper
 Configure::write('Bs3.Form', array(
-	'inputDefaults' => array(
-		'dateFormat' => 'DMY'
-	)
+    'inputDefaults' => array(
+        'dateFormat' => 'DMY'
+    )
 ));
 
 Configure::write('Bs3.Form.styles', array(
-	'menu' => array(
-		'formDefaults' => array(
-			'class' => 'navbar-form navbar-right row'
-		),
-		'inputDefaults' => array(
-			'class' => 'form-control input-sm',
-			'label' => array(
-				'class' => 'sr-only'
-			)
-		)
-	),
-	'paragraph' => array(
-		'formDefaults' => array(
-			'class' => array('paragraph')
-		)
-	)
+    'menu' => array(
+        'formDefaults' => array(
+            'class' => 'navbar-form navbar-right row'
+        ),
+        'inputDefaults' => array(
+            'class' => 'form-control input-sm',
+            'label' => array(
+                'class' => 'sr-only'
+            )
+        )
+    ),
+    'paragraph' => array(
+        'formDefaults' => array(
+            'class' => array('paragraph')
+        )
+    )
 ));
 
 // Stopwrods para Plugin Searchable
@@ -171,11 +171,12 @@ include APP . 'Config' . DS . 'stopwords.php';
  *
  * @return array itens em novas linhas
  */
-function nl() {
-	$content = func_get_args();
-	$return = '';
-	foreach ($content as $item) {
-		$return .= "\n" . $item;
-	}
-	return $return;
+function nl()
+{
+       $content = func_get_args();
+       $return = '';
+    foreach ($content as $item) {
+           $return .= "\n" . $item;
+    }
+       return $return;
 }

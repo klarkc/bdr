@@ -37,27 +37,27 @@
  * The origin email. See CakeEmail::from() about the valid values
  *
  */
-class EmailConfig {
+class EmailConfig
+{
 
-	public $default = array(
-		'transport' => 'Mail',
-		'from' => 'dontreply@localhost',
-		'charset' => 'utf-8',
-		'headerCharset' => 'utf-8',
-		'template' => 'default',
-		'layout' => 'default',
-		'emailFormat' => 'both'
-	);
+       public $default = array(
+          'transport' => 'Mail',
+          'from' => 'dontreply@localhost',
+          'charset' => 'utf-8',
+          'headerCharset' => 'utf-8',
+          'template' => 'default',
+          'layout' => 'default',
+          'emailFormat' => 'both'
+       );
 
-	public $receive = array(
-		'transport' => 'Mail',
-		'to' => 'walker@praiseweb.com.br',
-		'sender' => 'dontreply@localhost',
-		'charset' => 'utf-8',
-		'headerCharset' => 'utf-8',
-		'template' => 'contact',
-		'layout' => 'default',
-		'emailFormat' => 'both'
-	);
-
+       public $receive = array(
+          'transport' => 'Mail',
+          'to' => 'walker@praiseweb.com.br',
+          'sender' => 'dontreply@localhost',
+          'charset' => 'utf-8',
+          'headerCharset' => 'utf-8',
+          'template' => 'contact',
+          'layout' => 'default',
+          'emailFormat' => 'both'
+       );
 }

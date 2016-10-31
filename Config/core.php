@@ -49,9 +49,9 @@ Configure::write('debug', 2);
  * @see ErrorHandler for more information on error handling and configuration.
  */
 Configure::write('Error', array(
-	'handler' => 'ErrorHandler::handleError',
-	'level' => E_ALL & ~E_STRICT & ~E_DEPRECATED,
-	'trace' => true
+    'handler' => 'ErrorHandler::handleError',
+    'level' => E_ALL & ~E_STRICT & ~E_DEPRECATED,
+    'trace' => true
 ));
 
 /**
@@ -75,9 +75,9 @@ Configure::write('Error', array(
  * @see ErrorHandler for more information on exception handling and configuration.
  */
 Configure::write('Exception', array(
-	'handler' => 'ErrorHandler::handleException',
-	'renderer' => 'ExceptionRenderer',
-	'log' => true
+    'handler' => 'ErrorHandler::handleException',
+    'renderer' => 'ExceptionRenderer',
+    'log' => true
 ));
 
 /**
@@ -215,7 +215,7 @@ Configure::write('Cache.disable', false);
  *
  */
 Configure::write('Session', array(
-	'defaults' => 'database'
+    'defaults' => 'database'
 ));
 
 /**
@@ -350,21 +350,21 @@ Configure::write('Config.timezone', 'America/Bahia');
  *       and their settings.
  */
 Cache::config('default', array(
-	'engine' => 'File', //[required]
-	'duration' => 3600, //[optional]
-	'probability' => 100, //[optional]
-	'path' => CACHE, //[optional] use system tmp directory - remember to use absolute path
-	'prefix' => 'cake_', //[optional]  prefix every cache file with this string
-	'lock' => false, //[optional]  use file locking
-	'serialize' => true, //[optional]
-	'mask' => 0664, //[optional]
+    'engine' => 'File', //[required]
+    'duration' => 3600, //[optional]
+    'probability' => 100, //[optional]
+    'path' => CACHE, //[optional] use system tmp directory - remember to use absolute path
+    'prefix' => 'cake_', //[optional]  prefix every cache file with this string
+    'lock' => false, //[optional]  use file locking
+    'serialize' => true, //[optional]
+    'mask' => 0664, //[optional]
 ));
 
 
 // In development mode, caches should expire quickly.
 $duration = '+999 days';
 if (Configure::read('debug') > 0) {
-	$duration = '+10 seconds';
+       $duration = '+10 seconds';
 }
 
 // Prefix each application on the same server with a different string, to avoid Memcache and APC conflicts.
