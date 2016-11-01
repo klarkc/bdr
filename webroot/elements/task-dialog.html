@@ -1,0 +1,20 @@
+<dom-module id="task-dialog">
+    <template>
+        <style include="paper-dialog-shared-styles"></style>
+        <h2>Adicionar Tarefa</h2>
+        <paper-input></paper-input>
+        <paper-textarea></paper-textarea>
+        <div class="buttons">
+            <paper-button dialog-dissmiss>Cancelar</paper-button>
+            <paper-button dialog-confirm>Adicionar</paper-button>
+        </div>
+    </template>
+    <script>
+        Polymer({
+            is:"task-dialog",
+            behaviors: [
+                Polymer.PaperDialogBehavior
+            ]
+        });
+    </script>
+</dom-module>

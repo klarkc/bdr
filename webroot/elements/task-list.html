@@ -1,5 +1,3 @@
-<link rel="import" href="/elements/task-item.html">
-
 <dom-module id="task-list">
     <template>
         <style>
@@ -15,6 +13,10 @@
 
             task-card {
                 margin: 16px;
+            }
+
+            task-dialog {
+                @apply(--layout-vertical);
             }
 
             /* mobile-large */
@@ -54,11 +56,16 @@
             </template>
         </div>
 
-        <paper-fab icon="add"></paper-fab>
+        <paper-fab icon="add" on-tap="_openDialog"></paper-fab>
+
+        <task-dialog id="dialog"></task-dialog>
     </template>
     <script>
         Polymer({
-            is:"task-list"
+            is:"task-list",
+            _openDialog: function() {
+                this.$.dialog.open();
+            }
         });
     </script>
 </dom-module>
