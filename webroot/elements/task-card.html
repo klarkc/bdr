@@ -1,0 +1,35 @@
+<dom-module id="task-card">
+    <template>
+    <style>
+        :host {
+            display: block;
+        }
+
+        paper-card {
+            display: block;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            padding: 16px;
+            margin: 24px;
+        }
+        </style>
+        <paper-card heading="{{task.title}}">
+          <div class="card-content">{{task.description}}</div>
+          <div class="card-actions"></div>
+        </paper-card>
+    </template>
+    <script>
+        Polymer({
+            is:"task-card",
+            properties: {
+                task: {
+                    type: Object,
+                    notify: true
+                }
+            }
+        });
+    </script>
+</dom-module>

@@ -1,0 +1,26 @@
+<link rel="import" href="/elements/task-item.html">
+
+<dom-module id="task-list">
+    <template>
+        <style>
+            :host {
+                display: block;
+                background: var(--dark-background-color);
+            }
+        </style>
+        <iron-ajax
+            auto
+            url="/tasks.json"
+            handle-as="json"
+            last-response="{{response}}">
+        </iron-ajax>
+        <template is="dom-repeat" items="{{response.tasks}}">
+            <task-card task="{{item.Task}}"></task-card>
+        </template>
+    </template>
+    <script>
+        Polymer({
+            is:"task-list"
+        });
+    </script>
+</dom-module>

@@ -46,6 +46,7 @@
     --default-primary-color: var(--primary-color);
 
     font-family: 'Roboto', Helvica, sans-serif;
+    background-color: var(--light-theme-divider-color);
 }
 
 app-toolbar {
@@ -65,4 +66,5 @@ paper-menu#menu {
     --paper-menu-background-color: var(--light-primary-color);
     color: var(--light-theme-text-color);
 }
+
 </style>
