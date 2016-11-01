@@ -8,51 +8,55 @@ App::uses('AppController', 'Controller');
  * @property Task $Task
  * @property SessionComponent $Session
  */
-class TasksController extends AppController {
+class TasksController extends AppController
+{
 
     /**
-	 * Components
-	 *
-	 * @var array
-	 */
-	public $components = array('RequestHandler');
+  	 * Components
+  	 *
+  	 * @var array
+  	 */
+       public $components = array('RequestHandler');
 
-	/**
-	 * List all tasks
-	 *
-	 * @return void
-	 */
-	public function index() {
-		$this->set('title_for_layout', __('List of all tasks'));
-		$this->set('tasks', $this->Task->find('all', array(
-            'order' => array('priority' => 'desc')
+       /**
+  	 * List all tasks
+  	 *
+  	 * @return void
+  	 */
+    public function index()
+    {
+           $this->set('title_for_layout', __('List of all tasks'));
+           $this->set('tasks', $this->Task->find('all', array(
+         'order' => array('priority' => 'desc')
         )));
         $this->set('_serialize', array('tasks'));
-	}
+    }
 
     /**
-	 * View a task
-	 *
+  	 * View a task
+  	 *
      * @param int $d task id
-	 * @return void
-	 */
-	public function view($id) {
-		$this->set('title_for_layout', __('List of all tasks'));
-		$this->set('task', $this->Task->findById($id));
+  	 * @return void
+  	 */
+    public function view($id)
+    {
+           $this->set('title_for_layout', __('List of all tasks'));
+           $this->set('task', $this->Task->findById($id));
         $this->set('_serialize', array('task'));
-	}
+    }
 
     /**
-	 * Add a task
-	 *
-	 * @return void
-	 */
-    public function add() {
+  	 * Add a task
+  	 *
+  	 * @return void
+  	 */
+    public function add()
+    {
         $this->Task->create();
 
         if ($this->Task->save($this->request->data)) {
             $errors = array();
-        } else if(!empty($this->Task->validationErrors)){
+        } elseif (!empty($this->Task->validationErrors)){
             $errors = $this->Task->validationErrors;
         } else {
             $errors = 1;
@@ -65,17 +69,18 @@ class TasksController extends AppController {
     }
 
     /**
-	 * Edit a task
-	 *
+  	 * Edit a task
+  	 *
      * @param int $d task id
-	 * @return void
-	 */
-    public function edit($id) {
+  	 * @return void
+  	 */
+    public function edit($id)
+    {
         $this->Task->id = $id;
 
         if ($this->Task->save($this->request->data)) {
             $errors = array();
-        } else if(!empty($this->Task->validationErrors)){
+        } elseif (!empty($this->Task->validationErrors)){
             $errors = $this->Task->validationErrors;
         } else {
             $errors = 1;
@@ -88,12 +93,13 @@ class TasksController extends AppController {
     }
 
     /**
-	 * Delete a task
-	 *
+  	 * Delete a task
+  	 *
      * @param int $d task id
-	 * @return void
-	 */
-    public function delete($id) {
+  	 * @return void
+  	 */
+    public function delete($id)
+    {
         if ($this->Task->delete($id)) {
             $error = '0';
         } else {
@@ -104,5 +110,4 @@ class TasksController extends AppController {
             '_serialize' => array('error')
         ));
     }
-
 }

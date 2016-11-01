@@ -6,38 +6,38 @@ App::uses('AppModel', 'Model');
  * Task Model
  *
  */
-class Task extends AppModel {
+class Task extends AppModel
+{
 
-	/**
-	 * Display field
-	 *
-	 * @var string
-	 */
-	public $displayField = 'tarefa';
+       /**
+  	 * Display field
+  	 *
+  	 * @var string
+  	 */
+       public $displayField = 'tarefa';
 
-	/**
-	 * Validation rules
-	 *
-	 * @var array
-	 */
-	public $validate = array(
-		'title' => array(
+       /**
+  	 * Validation rules
+  	 *
+  	 * @var array
+  	 */
+       public $validate = array(
+          'title' => array(
             'rule' => 'notBlank',
             'required' => true,
             'message' => 'Title cannot be empty'
-		),
-		'description' => array(
+          ),
+          'description' => array(
             'rule' => array('maxLength', '250'),
             'allowEmpty' => true,
             'required' => false,
             'message' => 'Description is too long'
-		),
+          ),
         'priority' => array(
             'rule' => 'numeric',
             'allowEmpty' => false,
             'required' => false,
             'message' => 'Invalid priority value'
         )
-	);
-
+       );
 }
