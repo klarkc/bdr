@@ -24,7 +24,9 @@ class TasksController extends AppController {
 	 */
 	public function index() {
 		$this->set('title_for_layout', __('List of all tasks'));
-		$this->set('tasks', $this->Task->find('all'));
+		$this->set('tasks', $this->Task->find('all', array(
+            'order' => array('priority' => 'desc')
+        )));
         $this->set('_serialize', array('tasks'));
 	}
 

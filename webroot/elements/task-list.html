@@ -44,11 +44,13 @@
         </iron-ajax>
 
         <div class="tasks">
-            <template is="dom-repeat" items="{{response.tasks}}">
+            <template is="dom-repeat" items="{{response.tasks}}" id="tasks">
                 <task-card
                     task="{{item.Task}}"
                     on-edit="_editTask"
                     on-delete="_deleteTask"
+                    on-up-priority="_upTask"
+                    on-down-priority="_downTask"
                 ></task-card>
             </template>
         </div>
@@ -122,6 +124,30 @@
             },
             _deleteTask: function(event) {
                 this._request('DELETE', event.detail);
+            },
+            _upTask: function(event) {
+                var index = this.$.tasks.indexForElement(event.target);
+                if (index < 1) {
+                    return;
+                }
+
+                var beforeTask = this.response.tasks[index - 1].Task;
+                var curTask = this.response.tasks[index].Task;
+
+                curTask.priority = beforeTask.priority + 1;
+                this._request('POST', curTask);
+            },
+            _downTask: function(event) {
+                var index = this.$.tasks.indexForElement(event.target);
+                if (index >= this.response.tasks.length - 1) {
+                    return;
+                }
+
+                var nextTask = this.response.tasks[index + 1].Task;
+                var curTask = this.response.tasks[index].Task;
+
+                curTask.priority = Number(nextTask.priority) - 1;
+                this._request('POST', curTask);
             },
             _validate: function(task) {
                 if (!task.title) return false;

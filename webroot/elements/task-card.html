@@ -15,12 +15,22 @@
             user-select: none;
             */
         }
+
+        .green {
+            color: var(--paper-green-500);
+        }
+
+        .red {
+            color: var(--paper-red-500);
+        }
         </style>
         <paper-card heading="{{task.title}}">
           <div class="card-content">{{task.description}}</div>
           <div class="card-actions">
               <paper-icon-button icon="create" on-tap="_fireEdit"></paper-icon-button>
               <paper-icon-button icon="clear" on-tap="_fireDelete"></paper-icon-button>
+              <paper-icon-button class="green" icon="arrow-upward" on-tap="_fireUp"></paper-icon-button>
+              <paper-icon-button class="red" icon="arrow-downward" on-tap="_fireDown"></paper-icon-button>
           </div>
         </paper-card>
     </template>
@@ -38,6 +48,12 @@
             },
             _fireDelete: function() {
                 this.fire('delete', this.task);
+            },
+            _fireUp: function() {
+                this.fire('up-priority', this.task);
+            },
+            _fireDown: function() {
+                this.fire('down-priority', this.task);
             }
         });
     </script>
