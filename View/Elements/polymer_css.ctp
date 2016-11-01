@@ -75,4 +75,38 @@ paper-menu#menu paper-item {
     user-select: none;
 }
 
+.content-block {
+    background-color: var(--light-theme-background-color);
+    margin: 16px;
+    padding: 8px;
+}
+
+task-list {
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+/* mobile-large */
+@media all and (min-width: 361px) and (orientation: portrait) {
+    .content-block {
+        margin: 24px;
+    }
+
+    task-list {
+        margin-left: 24px;
+        margin-right: 24px;
+    }
+}
+
+/* mobile-large-landscape */
+@media all and (min-width: 481px) and (orientation: landscape) {
+    .content-block {
+        margin: 24px;
+    }
+
+    task-list {
+        margin-left: 24px;
+        margin-right: 24px;
+    }
+}
 </style>

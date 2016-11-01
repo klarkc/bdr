@@ -12,6 +12,7 @@
 <link rel="import" href="/third-party/paper-input/paper-input.html">
 <link rel="import" href="/third-party/paper-input/paper-textarea.html">
 <link rel="import" href="/third-party/paper-menu/paper-menu.html">
+<link rel="import" href="/third-party/paper-material/paper-material.html">
 <link rel="import" href="/third-party/paper-item/paper-item.html">
 <link rel="import" href="/third-party/paper-card/paper-card.html">
 <link rel="import" href="/third-party/paper-fab/paper-fab.html">
