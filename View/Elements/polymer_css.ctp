@@ -67,4 +67,12 @@ paper-menu#menu {
     color: var(--light-theme-text-color);
 }
 
+paper-menu#menu paper-item {
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
 </style>
