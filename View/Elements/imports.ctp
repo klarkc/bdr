@@ -18,6 +18,7 @@
 <link rel="import" href="/third-party/paper-dialog/paper-dialog.html">
 <link rel="import" href="/third-party/paper-dialog-scrollable/paper-dialog-scrollable.html">
 <link rel="import" href="/third-party/paper-button/paper-button.html">
+<link rel="import" href="/third-party/paper-icon-button/paper-icon-button.html">
 
 <!-- My Elements -->
 <link rel="import" href="/elements/task-dialog.html">

@@ -6,13 +6,18 @@
         <paper-textarea id="description" label="Descrição" value="{{description}}"></paper-textarea>
         <div class="buttons">
             <paper-button dialog-dismiss>Cancelar</paper-button>
-            <paper-button dialog-confirm>Adicionar</paper-button>
+            <paper-button dialog-confirm>Salvar</paper-button>
         </div>
     </template>
     <script>
         Polymer({
             is:"task-dialog",
             properties: {
+                id: {
+                    type: Number,
+                    notify: true,
+                    value: null
+                },
                 title: {
                     type: String,
                     notify: true

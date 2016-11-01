@@ -7,16 +7,21 @@
 
         paper-card {
             display: block;
+            /*
             cursor: pointer;
             -webkit-user-select: none;
             -moz-user-select: none;
             -ms-user-select: none;
             user-select: none;
+            */
         }
         </style>
         <paper-card heading="{{task.title}}">
           <div class="card-content">{{task.description}}</div>
-          <div class="card-actions"></div>
+          <div class="card-actions">
+              <paper-icon-button icon="create" on-tap="_fireEdit"></paper-icon-button>
+              <paper-icon-button icon="clear" on-tap="_fireDelete"></paper-icon-button>
+          </div>
         </paper-card>
     </template>
     <script>
@@ -27,6 +32,12 @@
                     type: Object,
                     notify: true
                 }
+            },
+            _fireEdit: function() {
+                this.fire('edit', this.task);
+            },
+            _fireDelete: function() {
+                this.fire('delete', this.task);
             }
         });
     </script>
