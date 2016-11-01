@@ -1,4 +1,4 @@
-<app-drawer opened>
+<app-drawer opened swipe-open>
     <paper-menu attr-for-selected="page" id="menu">
         <paper-item page="questao1">Questão 1</paper-item>
         <paper-item page="questao2">Questão 2</paper-item>
