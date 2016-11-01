@@ -35,8 +35,8 @@
 	<?php echo $this->element('default_head'); ?>
 </head>
 
-<body>
-    <app-drawer-layout class="<?php echo h(str_replace(' ','_', strtolower($title_for_layout))); ?>">
+<body id="<?php echo h(str_replace(' ','_', strtolower($title_for_layout))); ?>">
+    <app-drawer-layout>
         <?php echo $this->element('drawer'); ?>
         <app-header-layout>
             <app-header>
