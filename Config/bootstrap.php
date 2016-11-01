@@ -80,7 +80,6 @@ spl_autoload_register(array('App', 'load'), true, true);
  */
 CakePlugin::load('CakePtbr');
 CakePlugin::load('DebugKit');
-CakePlugin::load('Bs3Helpers');
 //CakePlugin::load('Tools', array('bootstrap' => true));
 
 CakePlugin::load('CodeSniffer');

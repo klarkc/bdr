@@ -35,8 +35,6 @@ class AppController extends Controller
 
        public $helpers = array(
           'Session' => array('className' => 'SessionExt'),
-          'Form' => array('className' => 'FormExt'),
-          'Html' => array('className' => 'HtmlExt'),
           'CakePtbr.Formatacao'
        );
 }
