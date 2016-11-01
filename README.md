@@ -20,6 +20,9 @@ composer install
 ```
 
 ## Criar tabelas no BD
+
+PS: Editar configurações em `Config/database.php`
+
 ```bash
 ./Console/cake schema create
 ```
