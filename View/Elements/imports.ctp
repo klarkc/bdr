@@ -1,5 +1,6 @@
 <link rel="import" href="/third-party/app-layout/app-layout.html">
 <!-- Iron Elements -->
+<link rel="import" href="/third-party/iron-flex-layout/iron-flex-layout.html">
 <link rel="import" href="/third-party/iron-icons/iron-icons.html">
 <link rel="import" href="/third-party/iron-ajax/iron-ajax.html">
 
@@ -12,6 +13,7 @@
 <link rel="import" href="/third-party/paper-menu/paper-menu.html">
 <link rel="import" href="/third-party/paper-item/paper-item.html">
 <link rel="import" href="/third-party/paper-card/paper-card.html">
+<link rel="import" href="/third-party/paper-fab/paper-fab.html">
 
 <!-- My Elements -->
 <link rel="import" href="/elements/task-card.html">

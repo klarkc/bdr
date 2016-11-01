@@ -5,7 +5,40 @@
         <style>
             :host {
                 display: block;
-                background: var(--dark-background-color);
+            }
+
+            paper-fab {
+                position: fixed;
+                right: 16px;
+                bottom: 16px;
+            }
+
+            task-card {
+                margin: 16px;
+            }
+
+            /* mobile-large */
+            @media all and (min-width: 361px) and (orientation: portrait) {
+                paper-fab {
+                    right: 24px;
+                    bottom: 24px;
+                }
+
+                task-card {
+                    margin: 24px;
+                }
+            }
+
+            /* mobile-large-landscape */
+            @media all and (min-width: 481px) and (orientation: landscape) {
+                paper-fab {
+                    right: 24px;
+                    bottom: 24px;
+                }
+
+                task-card {
+                    margin: 24px;
+                }
             }
         </style>
         <iron-ajax
@@ -14,9 +47,14 @@
             handle-as="json"
             last-response="{{response}}">
         </iron-ajax>
-        <template is="dom-repeat" items="{{response.tasks}}">
-            <task-card task="{{item.Task}}"></task-card>
-        </template>
+
+        <div class="tasks">
+            <template is="dom-repeat" items="{{response.tasks}}">
+                <task-card task="{{item.Task}}"></task-card>
+            </template>
+        </div>
+
+        <paper-fab icon="add"></paper-fab>
     </template>
     <script>
         Polymer({
