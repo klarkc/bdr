@@ -44,9 +44,10 @@
             }
         </style>
         <iron-ajax
-            auto
+            id="tasksAjax"
             url="/tasks.json"
             handle-as="json"
+            content-type="application/json"
             last-response="{{response}}">
         </iron-ajax>
 
@@ -56,15 +57,56 @@
             </template>
         </div>
 
-        <paper-fab icon="add" on-tap="_openDialog"></paper-fab>
+        <paper-fab id="fab" icon="add"></paper-fab>
 
         <task-dialog id="dialog"></task-dialog>
     </template>
     <script>
         Polymer({
             is:"task-list",
+            listeners: {
+                'fab.tap': '_openDialog',
+                'dialog.iron-overlay-closed': '_dialogClosed',
+                'tasksAjax.response': '_processResponse'
+            },
             _openDialog: function() {
                 this.$.dialog.open();
+            },
+            _processResponse: function(event) {
+                var errors = event.detail.response.errors;
+                if (errors && Object.keys(errors).length > 0) {
+                    console.log(errors);
+                } else if (errors) {
+                    this._resetState();
+                    this.$.tasksAjax.generateRequest();
+                }
+            },
+            _dialogClosed: function(event) {
+                if (event.detail.confirmed && this._validate(this.$.dialog)) {
+
+                    this.$.tasksAjax.method = 'POST';
+                    this.$.tasksAjax.body = {
+                        'title': this.$.dialog.title,
+                        'description': this.$.dialog.description
+                    }
+                    this.$.tasksAjax.generateRequest();
+                } else {
+                    this._resetState();
+                }
+            },
+            _validate: function(task) {
+                if (!task.title) return false;
+                return true;
+            },
+            _resetState: function() {
+                this.$.tasksAjax.method = 'GET';
+                this.$.tasksAjax.body = null;
+                this.$.dialog.close();
+                this.$.dialog.title = null;
+                this.$.dialog.description = null;
+            },
+            ready: function() {
+                this.$.tasksAjax.generateRequest();
             }
         });
     </script>

@@ -2,8 +2,8 @@
     <template>
         <style include="paper-dialog-shared-styles"></style>
         <h2>Adicionar Tarefa</h2>
-        <paper-input id="title"></paper-input>
-        <paper-textarea id="description"></paper-textarea>
+        <paper-input id="title" label="Título" required value="{{title}}"></paper-input>
+        <paper-textarea id="description" label="Descrição" value="{{description}}"></paper-textarea>
         <div class="buttons">
             <paper-button dialog-dismiss>Cancelar</paper-button>
             <paper-button dialog-confirm>Adicionar</paper-button>
@@ -12,6 +12,16 @@
     <script>
         Polymer({
             is:"task-dialog",
+            properties: {
+                title: {
+                    type: String,
+                    notify: true
+                },
+                description: {
+                    type: String,
+                    notify: true
+                }
+            },
             behaviors: [
                 Polymer.PaperDialogBehavior
             ]
